@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div>
+    <div class="relative max-w-sm">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 20 20">
+                <path
+                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+            </svg>
+        </div>
+        <input datepicker id="default-datepicker" type="text"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Select date">
+        <button
+            type="button"
+            id="countdown-id"
+            class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium
+            rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700
+            dark:border-gray-700"
+        >
+        Start Countdown
+        </button>
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+<script src="main.js"></script>
+<script>
+
+
+    document.getElementById("countdown-id").addEventListener("click", function (params) {
+        const datepickerEl = document.getElementById('default-datepicker');
+
+        const instanceOptions = {
+            override: true
+        };
+
+        const datepicker = new Datepicker(datepickerEl, {}, instanceOptions);
+
+        console.log(datepicker.getDate().getTime());
+
+        console.log(datepicker.getDate());
+
+        localStorage.setItem('birthday', datepicker.getDate().getTime());
+    });
+
+
+    countDownTimer();
+
+
+</script>
+</body>
+</html>
