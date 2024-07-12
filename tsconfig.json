@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "removeComments": false,
+    "noEmitOnError": true,
+  },
+  "files": [
+    "main.ts",
+  ]
+}
